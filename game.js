@@ -1,3 +1,5 @@
+
+
 let score = 0;
 let pointsPerClick = 1;
 
@@ -31,4 +33,25 @@ const upgrades = [
     cost: 50,
     bonus: pointsPerClick * 5
   }
-]
+];
+
+
+function renderUpgrades(){
+  const upgradeRender = document.getElementById("upgrades");
+  upgradeRender.innerHTML = "";
+
+  upgrades.forEach(element => {
+  const div = document.createElement('div');
+
+  div.innerHTML = `
+  <strong> ${element.name}</strong>
+  Cost: ${element.cost} | +${element.bonus} per click
+  <button onclick="buyUpgrade(${element.id})">Buy</button>
+  
+  `;
+  upgradeRender.appendChild(div);
+
+  });
+};
+
+renderUpgrades();
