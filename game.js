@@ -12,6 +12,7 @@ function updateDisplay() {
 document.getElementById('click-btn').addEventListener("click", function() {
     score += pointsPerClick;
     updateDisplay();
+    renderUpgrades();
 });
 
 const upgrades = [
@@ -40,16 +41,30 @@ function renderUpgrades(){
   const upgradeRender = document.getElementById("upgrades");
   upgradeRender.innerHTML = "";
 
+
   upgrades.forEach(element => {
   const div = document.createElement('div');
 
+  const button = document.createElement('button');
+  button.textContent = 'Buy';
+  button.onclick = () => buyUpgrade(element.id);
+  if(score < element.cost){
+      button.disabled = true;
+  } else {
+    button.disabled = false; 
+  }
+
+
+
+
   div.innerHTML = `
-  <strong> ${element.name}</strong>
-  Cost: ${element.cost} | +${element.bonus} per click
-  <button onclick="buyUpgrade(${element.id})">Buy</button>
-  
+    <strong> ${element.name}</strong>
+    Cost: ${element.cost} | +${element.bonus} per click
+    
+    
   `;
   upgradeRender.appendChild(div);
+  upgradeRender.appendChild(button);
 
   });
 };
@@ -63,6 +78,7 @@ function buyUpgrade(id) {
     updateDisplay();
     renderUpgrades();
   }
+
 }
 
 renderUpgrades();
