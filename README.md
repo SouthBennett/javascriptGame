@@ -36,3 +36,8 @@ A simple asteroid mining clicker game where you collect minerals by clicking and
 ## Goal
 
 - Reach the required score as efficiently as possible by balancing manual clicking and upgrades.
+
+---
+
+## GitHub Pages Link 
+- https://southbennett.github.io/javascriptGame/
