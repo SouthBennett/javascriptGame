@@ -11,6 +11,7 @@ function updateDisplay() {
 
 document.getElementById('click-btn').addEventListener("click", function() {
     score += pointsPerClick;
+    showFloatingText("+" + pointsPerClick);
     updateDisplay();
     renderUpgrades();
 });
@@ -74,11 +75,25 @@ function buyUpgrade(id) {
 
   if (score >= upgrade.cost) {
     score -= upgrade.cost;
+    showFloatingText("-" + upgrade.cost);
     pointsPerClick += upgrade.bonus;
     updateDisplay();
     renderUpgrades();
   }
 
+}
+
+function showFloatingText(amount) {
+  const clickArea = document.getElementById("click-area");
+
+  const text = document.createElement("span");
+  text.textContent = amount;
+
+  clickArea.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 500);
 }
 
 renderUpgrades();
