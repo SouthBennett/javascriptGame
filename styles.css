@@ -5,10 +5,17 @@ body {
   color: #f5f5f5;
   margin: 0;
   padding: 20px;
+
+  background-image: url(./Astroid-Miner.png);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
   color: blue;
+  text-decoration-line: underline;
+  font-size: 3rem;
 }
 
 button {
@@ -23,4 +30,14 @@ button {
 
 button:hover {
   background-color: #555;
+}
+
+#upgradeTracker{
+  border-radius: 1rem;
+  border-style:double;
+  background-color: #1b1b1b;
+  width: 10rem;
+  height: 15rem;
+  padding: 1rem;
+  
 }

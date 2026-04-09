@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="styles.css">
-  <title>Fallout Bottle Cap Collector</title>
+  <title>Deep Space Miner</title>
 </head>
 <body>
-  <h1>Wasteland Hustle</h1>
+  <h1>Deep Space Miner</h1>
 
-  <p id="score-display">Score: </p>
 
-  <p id="rate-display">Points per click: </p>
+  <p id="score-display">Minerals Collected: </p>
+
+  <p id="rate-display">Harvest Rate: </p>
 
   <div id="click-area">
     <button id="click-btn">Click</button>
@@ -24,5 +25,14 @@
    
    </div>
     <script src="game.js"></script>
+
+  <div id="upgradeTracker">
+    <h2>Purchased Upgrades: </h2>
+    <div id="purchasedUpgrades">
+      <p id="laser">Laser: </p>
+      <p id="crew">Crew: </p>
+      <p id="cargo">Cargo Space: </p>
+    </div>
+  </div>
 </body>
 </html>
